@@ -1,0 +1,134 @@
+:root {
+    --backgrd: #e6d9c7;
+    --ecru: #a89c68;
+    --cafe-au-lait: #a77d5b;
+    --coyote-brown: #845d42;
+    --bone: #cfc5b3;
+    --camel: #bc9767;
+    --russet: #804f32;
+    --light-french-beige: #c0a375;
+}
+
+/*body 95% van schermbreedte, gecentreerd en met ruimte bovenaan van .5em*/
+
+body {
+    width: 92vw;
+    margin: 0.5em auto 0 auto;
+    background-color: var(--backgrd); /*body heeft achtergrond kleur --backgrd*/
+    font-size: 16px; /*body heeft een standaard lettergrootte van 16px*/
+}
+
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.3em;
+}
+h4 {
+    font-size: 1.2em;
+}
+
+h1::first-letter, h2::first-letter, h3::first-letter, h4::first-letter, h5::first-letter {
+    text-transform: uppercase;
+}
+
+/*logo herschalen*/
+nav img {
+    height: 5em;
+}
+
+.hidden-title {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*navigatiegedeelte --> muisaanwijzer over navigatielink toont de link in kleur --coyote-brown*/
+a:hover{
+    color: var(--coyote-brown);
+}
+
+/*de tekst die na een afbeelding op de pagina volgt zet je in italic*/
+img + p {
+    font-style: italic;
+}
+
+/*De eerste letter van elke paragraaf heeft font grootte van 180% en een font gewicht van 200.*/
+p::first-letter {
+    font-size: 180%;
+    font-weight: lighter;
+}
+
+/*MENU*/
+#menu {
+    display: flex;
+    flex-direction: row;
+}
+
+#menu ul {
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 0;
+    /*flex-container properties*/
+    display: flex;
+    flex-direction: row;
+    /*flex-child properties*/
+    flex-grow: 1;
+}
+
+#menu .submenu {
+    position: relative; /*ankerpunt*/
+}
+#menu .submenu ul {
+    display: none;
+}
+#menu .submenu::after {
+    content: "+"
+}
+#menu .submenu:hover ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+
+#menu li {
+    background-color: var(--coyote-brown);
+    flex-grow: 1;
+    width: 100%;
+}
+
+#menu li a, #menu .active {
+    display: block;
+    text-align: center;
+    padding: 0.75em 1em; /*Geef je lijst items een verticale padding van .75em en een horizontale van 1em.*/
+}
+#menu li a {
+    text-decoration: none; /*Verwijder de onderlijning van de navigatie links*/
+    width: 100%;
+    color: var(--bone); /*geef je navigatielink standaard de kleur --bone*/
+}
+
+#menu li:hover {
+    background-color: var(--light-french-beige);
+}
+/*enkel het hoofdmenu is geimpacteerd*/
+#menu ul > li:hover > a {
+    color: var(--russet);
+}
+#menu .active {
+    background-color: var(--light-french-beige);
+    color: var(--russet);
+}
+
+
+
+
+

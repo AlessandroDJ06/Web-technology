@@ -1,0 +1,27 @@
+aside img {
+    width: 100%;
+}
+
+/*Grid layout*/
+
+.gridcontainer {
+    display: grid;
+    grid-template-columns:  5fr 2fr;
+    grid-template-rows:  auto;
+    grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+    grid-gap: 5px;
+    }
+
+.gridheader { grid-area: header; }
+.gridaside { grid-area: aside; }
+.gridmain { grid-area: main; }
+.gridfooter { grid-area: footer; }
+
+.gridtile {
+    border-radius: 0.5em;
+    padding: 0.5em;
+    border: 1px solid var(--russet);
+}

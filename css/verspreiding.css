@@ -1,0 +1,22 @@
+.foto-gallerij ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-gallerij ul li{
+    max-width: 22rem;
+    min-width: 200px;
+
+}
+
+.foto-gallerij ul li img{
+    width: 100%;
+    border: 1px solid var(--russet);
+    border-radius: 1rem;
+}
